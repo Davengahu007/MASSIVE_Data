@@ -11,11 +11,11 @@ def get_language_from_locale(locale):
 
 dataset_directory = 'C:\\Users\\Admin\\MASSIVE_Data\\amazon_massive_dataset\\data'
 
-# Read the en-US.jsonl file into a dataframe
+"""Read the en-US.jsonl file into a dataframe"""
 english_df = pd.read_json(os.path.join(dataset_directory, 'en-US.jsonl'), lines=True)
 english_df['en-US'] = english_df['utt'] + ': ' + english_df['annot_utt']
 
-# Create a new Excel writer object
+"""Create a new Excel writer object"""
 with pd.ExcelWriter('translation_sheets_by_language.xlsx') as writer:
 
     for filename in os.listdir(dataset_directory):
