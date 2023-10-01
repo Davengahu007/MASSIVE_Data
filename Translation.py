@@ -9,7 +9,7 @@ def get_language_from_locale(locale):
     except AttributeError:
         return locale
 
-dataset_directory = 'C:\\Users\\Admin\\MASSIVE_Data\\amazon_massive_dataset\\data'
+dataset_directory = './amazon_massive_dataset/data'
 
 """Read the en-US.jsonl file into a dataframe"""
 english_df = pd.read_json(os.path.join(dataset_directory, 'en-US.jsonl'), lines=True)
