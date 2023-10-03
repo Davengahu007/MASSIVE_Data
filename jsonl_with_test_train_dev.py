@@ -2,7 +2,9 @@ import json
 import os
 import glob
 
-input_folder = 'C:\\Users\\Admin\\MASSIVE_Data\\amazon_massive_dataset\\data'
+# input_folder = 'C:\\Users\\emman\\PycharmProjects\\MASSIVE_Data\\amazon_massive_dataset\\data'
+input_folder = './amazon_massive_dataset/data'
+
 output_folder = "output_folder"
 
 languages_to_extract = ["en", "sw", "de"]

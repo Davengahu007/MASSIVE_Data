@@ -1,7 +1,9 @@
 import pandas as pd
 import os
 
-dataset_directory = 'C:\\Users\\Admin\\MASSIVE_Data\\amazon_massive_dataset\\data'
+# dataset_directory = 'C:\\Users\\Admin\\MASSIVE_Data\\amazon_massive_dataset\\data'
+
+dataset_directory = './amazon_massive_dataset/data'
 
 dfs = []
 
