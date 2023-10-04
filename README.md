@@ -76,14 +76,16 @@ Mention any additional information or flags that may be required to run the code
 
 - `pandas` for data processing.
 - `pycountry` for working with locale codes.
+- `numpy` for numerical and mathematical operations 
+- `wheel` for packaging and distributing projects
+- `pip` for package management
+- `openpyxl` for reading and writing Excel files
 
 ## Authors
 
-- [Your Name]
+- Makena Wahu and Co.
 
-## License
 
-This project is open-source and available under the [MIT License](LICENSE) (if applicable).
 
 
 
