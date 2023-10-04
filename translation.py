@@ -1,6 +1,17 @@
+import argparse
 import pandas as pd
 import os
 import pycountry
+
+import argparse
+
+# Argument Parsing
+parser = argparse.ArgumentParser()
+parser.add_argument('-d', '--dataset_directory', default='./amazon_massive_dataset/data', help='Path to the dataset directory')
+args = parser.parse_args()
+
+
+dataset_directory = args.dataset_directory
 
 def get_language_from_locale(locale):
     try:
@@ -31,3 +42,5 @@ with pd.ExcelWriter('translation_sheets_by_language.xlsx') as writer:
             merged_df = english_df[['id', 'en-US']].merge(df[['id', locale]], on='id', how='outer')
 
             merged_df.to_excel(writer, sheet_name=language_name, index=False)
+
+
