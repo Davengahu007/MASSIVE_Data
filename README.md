@@ -25,7 +25,25 @@ This project consists of several tasks, each described below. The primary goal i
 6. Use the provided code to generate the en-xx.xlsx file.
 
 ### Example
-Include a brief code example or a step-by-step guide if necessary.
+# Install virtualenv
+```bash
+pip install virtualenv
+```
+
+# Create a new virtual environment
+```bash
+virtualenv env
+```
+
+# Activate the virtual environment
+```bash
+source env/bin/activate
+```
+
+# Install necessary dependencies
+```bash
+pip install -r requirements.txt
+```
 
 ### Notes
 Mention any additional information or flags that may be required to run the code.
@@ -58,14 +76,16 @@ Mention any additional information or flags that may be required to run the code
 
 - `pandas` for data processing.
 - `pycountry` for working with locale codes.
+- `numpy` for numerical and mathematical operations 
+- `wheel` for packaging and distributing projects
+- `pip` for package management
+- `openpyxl` for reading and writing Excel files
 
 ## Authors
 
-- [Your Name]
+- Makena Wahu and Co.
 
-## License
 
-This project is open-source and available under the [MIT License](LICENSE) (if applicable).
 
 
 
