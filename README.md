@@ -1,7 +1,5 @@
 # MASSIVE_Data
 
-# Project Name (e.g., Translation Data Processing)
-
 ## Overview
 
 This project consists of several tasks, each described below. The primary goal is to process translation data from the MASSIVE Dataset. The code is organized into different Python files, each focusing on specific aspects of the tasks.
@@ -45,8 +43,6 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### Notes
-Mention any additional information or flags that may be required to run the code.
 
 ##  Working with Files 
 
@@ -63,7 +59,13 @@ Mention any additional information or flags that may be required to run the code
 Include a brief code example or a step-by-step guide if necessary.
 
 ### Notes
-Mention any additional information or flags that may be required to run the code.
+Sets Variables: It initializes variables with command-line arguments. command gets the first argument, dataset_directory gets the second, and PYTHON_PATH is set to the path of the Python executable.
+
+Checks Python Path: Verifies if Python is installed at PYTHON_PATH; if not, it exits with an error message.
+
+Executes Command: Depending on command value, it executes a different Python script (translation.py, jsonl_with_test_train_dev.py, train_sets.py, or main.py), passing dataset_directory as a parameter. If command is unrecognized, it provides a usage message and exits.
+
+For example, running .\generator.bat translation "your_directory" will execute translation.py -d "your_directory" using the specified Python interpreter.
 
 ## File Structure
 
@@ -81,9 +83,7 @@ Mention any additional information or flags that may be required to run the code
 - `pip` for package management
 - `openpyxl` for reading and writing Excel files
 
-## Authors
 
-- Makena Wahu and Co.
 
 
 
