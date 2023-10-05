@@ -1,3 +1,4 @@
+import argparse
 from jsonl_with_test_train_dev import process_data
 from train_sets import create_train_sets
 from translation import create_translation
@@ -5,7 +6,7 @@ from translation import create_translation
 input_folder = './amazon_massive_dataset/data'
 output_folder = "output_folder"
 languages_to_extract = ["en", "sw", "de"]
-import argparse
+
 
 # Argument Parsing
 parser = argparse.ArgumentParser()
