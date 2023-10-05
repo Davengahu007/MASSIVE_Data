@@ -10,6 +10,10 @@ args = parser.parse_args()
 
 dataset_directory = args.dataset_directory
 
+# Hard coded values
+input_folder = './amazon_massive_dataset/data'
+output_folder = './output_folder'
+languages_to_extract = ['en', 'sw', 'de']
 
 
 def process_data(input_folder, output_folder, languages_to_extract):
@@ -57,3 +61,5 @@ def process_data(input_folder, output_folder, languages_to_extract):
         for output_file in output_files_for_language.values():
             if output_file is not None:
                 output_file.close()
+
+process_data(input_folder, output_folder, languages_to_extract)
