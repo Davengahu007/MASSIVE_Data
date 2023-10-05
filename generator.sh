@@ -1,23 +1,13 @@
 #!/bin/bash
 
-command=$1  # the name of the script to run (translation, jsonl_with_test_train, train_sets)
-shift  # shifting the arguments, so that $2 becomes $1, $3 becomes $2,
+# Run translation.py
+python3 translation.py -d './amazon_massive_dataset/data'
 
-dataset_directory=$1  # the dataset directory path
+# Run jsonl_with_test_train_dev.py
+python3 jsonl_with_test_train_dev.py -d './amazon_massive_dataset/data'
 
-case $command in
-    translation)
-        python3 translation.py -d "$dataset_directory"
-        ;;
-    jsonl_with_test_train)
-        python3 jsonl_with_test_train.py -d "$dataset_directory"
-        ;;
-    train_sets)
-        python3 train_sets.py -d "$dataset_directory"
-        ;;
-    *)
-        echo "Unknown command: $command"
-        echo "Usage: $0 {translation|jsonl_with_test_train|train_sets} dataset_directory"
-        exit 1
-        ;;
-esac
+# Run train_sets.py
+python3 train_sets.py -d './amazon_massive_dataset/data'
+
+# Run main.py
+python3 main.py -d './amazon_massive_dataset/data'
