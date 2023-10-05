@@ -19,5 +19,4 @@ def create_train_sets(dataset_directory, output_file):
                     translations[id]["utt"][language_code] = translation
 
     with open(output_file, 'w', encoding='utf-8') as json_file:
-        json.dump(translations, json_file, ensure_ascii=False,indent=4)
-
+        json.dump(translations, json_file, ensure_ascii=False, indent=4)
