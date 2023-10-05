@@ -8,7 +8,7 @@ def create_train_sets(dataset_directory, output_file):
 
     for filename in os.listdir(dataset_directory):
         if filename.endswith('.jsonl'):
-            language_code = filename.split('.')[0]  # Extract language code from the filename
+            language_code = filename.split('.')[0]
             df = pd.read_json(os.path.join(dataset_directory, filename), lines=True)
             for index, row in df.iterrows():
                 if row['partition'] == 'train':

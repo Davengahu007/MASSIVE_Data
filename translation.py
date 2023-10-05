@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import pycountry
 
-# Argument Parsing
+"""Argument Parsing"""
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--dataset_directory', default='./amazon_massive_dataset/data', help='Path to the dataset directory')
 args = parser.parse_args()
