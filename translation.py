@@ -11,6 +11,7 @@ args = parser.parse_args()
 
 dataset_directory = args.dataset_directory
 
+
 def get_language_from_locale(locale):
     try:
         language_code = locale.split('-')[0]
@@ -31,3 +32,5 @@ def create_translation(dataset_directory):
                 df[locale] = df['utt'] + ': ' + df['annot_utt']
                 merged_df = english_df[['id', 'en-US']].merge(df[['id', locale]], on='id', how='outer')
                 merged_df.to_excel(writer, sheet_name=language_name, index=False)
+
+create_translation(dataset_directory)

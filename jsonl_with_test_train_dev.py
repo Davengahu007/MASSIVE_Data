@@ -11,12 +11,11 @@ args = parser.parse_args()
 dataset_directory = args.dataset_directory
 
 """Hard coded values"""
-input_folder = './amazon_massive_dataset/data'
 output_folder = './output_folder'
 languages_to_extract = ['en', 'sw', 'de']
 
 
-def process_data(input_folder, output_folder, languages_to_extract):
+def process_data(dataset_directory, output_folder, languages_to_extract):
     output_files = {}
     for language in languages_to_extract:
         output_files[language] = {}
@@ -24,7 +23,7 @@ def process_data(input_folder, output_folder, languages_to_extract):
             output_files[language][partition] = None
 
     def get_input_file(language_code):
-        input_file_path = glob.glob(f"{input_folder}/*.jsonl")
+        input_file_path = glob.glob(f"{dataset_directory}/*.jsonl")
         for file_path in input_file_path:
             if language_code in file_path:
                 return file_path
@@ -62,4 +61,4 @@ def process_data(input_folder, output_folder, languages_to_extract):
             if output_file is not None:
                 output_file.close()
 
-process_data(input_folder, output_folder, languages_to_extract)
+process_data(dataset_directory, output_folder, languages_to_extract)
