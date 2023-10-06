@@ -7,12 +7,7 @@ This project consists of several tasks, each described below. The primary goal i
 ##  Python3 Development Environment 
 
 ### Description
-- Set up a new Python3 development environment for this assessment.
-- Install all the dependencies that you think will be relevant.
-- Build a Python3 project with the structure of projects in PyCharm.
-- Import the MASSIVE Dataset mentioned in the Data File above.
-- Generate an en-xx.xlsx file for all languages using the id, utt, and annot_utt fields.
-- Avoid using recursive algorithms due to their time complexity and memory issues.
+As a team, we've established a new Python 3 development environment for our assessment. To ensure smooth development, we've installed all the relevant dependencies. Our Python project, structured like projects in PyCharm, is ready to go. We've successfully imported the MASSIVE Dataset mentioned in the data file. Using the 'id,' 'utt,' and 'annot_utt' fields, we've generated an 'en-xx.xlsx' file for all languages. To optimize efficiency and avoid time complexity and memory issues, we've steered clear of using recursive algorithms. 
 
 ### Usage
 1. Ensure Python3 is installed on your system.
@@ -47,9 +42,7 @@ pip install -r requirements.txt
 ##  Working with Files 
 
 ### Description
-- Generate separate JSONL files for English (en), Swahili (sw), and German (de) for test, train, and dev respectively.
-- Generate a single JSON file showing translations from en to xx with id and utt for all train sets.
-- Pretty print the JSON file structure.
+To fulfill the task, you need to create separate JSONL files for the test, train, and dev sets in English (en), Swahili (sw), and German (de). Additionally, generate a single JSON file that shows translations from English to an unspecified language (xx) with IDs and utterances for all train sets. Finally, ensure the JSON file structure is well-formatted and easily readable through pretty printing. This approach will organize the data effectively, making it readily available for analysis or use in machine learning tasks.
 
 ### Usage
 1. Execute the provided code to accomplish the tasks.
