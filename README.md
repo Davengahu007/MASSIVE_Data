@@ -55,9 +55,6 @@ pip install -r requirements.txt
 1. Execute the provided code to accomplish the tasks.
 2. Ensure you have the required dataset files in the specified directory.
 
-### Example
-Include a brief code example or a step-by-step guide if necessary.
-
 ### Notes
 Sets Variables: It initializes variables with command-line arguments. command gets the first argument, dataset_directory gets the second, and PYTHON_PATH is set to the path of the Python executable.
 
@@ -76,12 +73,32 @@ For example, running .\generator.bat translation "your_directory" will execute t
 
 ## Dependencies
 
-- `pandas` for data processing.
-- `pycountry` for working with locale codes.
-- `numpy` for numerical and mathematical operations 
-- `wheel` for packaging and distributing projects
 - `pip` for package management
+- `pandas` for data processing.
+  ```bash
+    pip install pandas
+  ```
+- `pycountry` for working with locale codes.
+  ```bash
+  pip install pycountry
+  ```
+- `numpy` for numerical and mathematical operations
+  ```bash
+  pip install numpy
+  ```
+- `wheel` for packaging and distributing projects
+  ```bash
+  pip install wheel
+  ```
 - `openpyxl` for reading and writing Excel files
+  ```bash
+  pip install openpyxl
+  ```
+  - `argparse` used to parse command-line arguments and options
+    ```bash
+    pip install argparse
+    ```
+  
 
 
 
