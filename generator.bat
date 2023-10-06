@@ -1,18 +1,22 @@
 @echo off
-set command=%1
-shift
-set dataset_directory=%1
+set "command=%~1"
+set "dataset_directory=%~2"
+
+set "PYTHON_PATH=C:\Users\Admin\MASSIVE_Data\venv\Scripts\python.exe"
+if not exist "%PYTHON_PATH%" (
+    echo Python interpreter not found at %PYTHON_PATH%
+    exit /b 1
+)
 
 if "%command%"=="translation" (
-    python translation.py -d "%dataset_directory%"
+    %PYTHON_PATH% translation.py -d "%dataset_directory%"
 ) else if "%command%"=="jsonl_with_test_train_dev" (
-    python jsonl_with_test_train_dev.py -d "%dataset_directory%"
+    %PYTHON_PATH% jsonl_with_test_train_dev.py -d "%dataset_directory%"
 ) else if "%command%"=="train_sets" (
-    python train_sets.py -d "%dataset_directory%"
+    %PYTHON_PATH% train_sets.py -d "%dataset_directory%"
 ) else if "%command%"=="main" (
-    python main.py -d "%dataset_directory%"
+    %PYTHON_PATH% main.py -d "%dataset_directory%"
 ) else (
     echo Unknown command: %command%
-    echo Usage: %0 {translation^|jsonl_with_test_train^|train_sets^|main} dataset_directory
     exit /b 1
 )

@@ -5,17 +5,15 @@ import argparse
 
 """Argument Parsing"""
 parser = argparse.ArgumentParser()
-parser.add_argument('-d', '--dataset_directory', default='./amazon_massive_dataset/data', help='Path to the dataset directory')
+parser.add_argument('-d', '--dataset_directory', default='./amazon_massive_dataset/data', help='Path to the dataset '                                                                                            'directory')
 args = parser.parse_args()
-
 dataset_directory = args.dataset_directory
 
-"""Hard coded values"""
 output_folder = './output_folder'
 languages_to_extract = ['en', 'sw', 'de']
 
-
 def process_data(dataset_directory, output_folder, languages_to_extract):
+    """Encapsulates main logic"""
     output_files = {}
     for language in languages_to_extract:
         output_files[language] = {}
@@ -23,6 +21,7 @@ def process_data(dataset_directory, output_folder, languages_to_extract):
             output_files[language][partition] = None
 
     def get_input_file(language_code):
+        """Iterates through dataset to extract jsonl files for the specified languages"""
         input_file_path = glob.glob(f"{dataset_directory}/*.jsonl")
         for file_path in input_file_path:
             if language_code in file_path:
@@ -30,6 +29,7 @@ def process_data(dataset_directory, output_folder, languages_to_extract):
         return None
 
     def get_output_file(language, partition):
+        """Stores the partitions for different languages in their specified folders"""
         if output_files[language][partition] is None:
             output_file_path = os.path.join(output_folder, language, partition + ".jsonl")
             os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
@@ -37,6 +37,7 @@ def process_data(dataset_directory, output_folder, languages_to_extract):
         return output_files[language][partition]
 
     def filter_and_extract(data, partition):
+        """filters through the specified jsonl files and extracts the different partitions"""
         if "partition" in data and data["partition"] == partition:
             return True
         return False
@@ -60,5 +61,6 @@ def process_data(dataset_directory, output_folder, languages_to_extract):
         for output_file in output_files_for_language.values():
             if output_file is not None:
                 output_file.close()
+
 
 process_data(dataset_directory, output_folder, languages_to_extract)

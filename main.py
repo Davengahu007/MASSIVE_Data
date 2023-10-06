@@ -14,10 +14,14 @@ parser.add_argument('-d', '--dataset_directory', default='./amazon_massive_datas
 args = parser.parse_args()
 
 dataset_directory = args.dataset_directory
-output_file = 'translations_train.json'
 
 process_data(input_folder, output_folder, languages_to_extract)
 
+input_directory = './amazon_massive_dataset/data'
+output_file = 'translations_train.json'
+
 create_train_sets(dataset_directory, output_file)
+
+dataset_directory = './amazon_massive_dataset/data'
 
 create_translation(dataset_directory)
